@@ -1,0 +1,6 @@
+lib/PPIx/XPath.pm
+t/01basic.t
+Makefile.PL
+MANIFEST
+README
+META.yml
