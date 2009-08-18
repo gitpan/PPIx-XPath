@@ -1,14 +1,17 @@
-# require 5.005;
+use inc::Module::Install;
 
-use ExtUtils::MakeMaker;
+name     'PPIx-XPath';
+license  'perl';
+all_from 'lib/PPIx/XPath.pm';
 
-WriteMakefile(
-  NAME         => 'PPIx::XPath',
-  VERSION_FROM => 'lib/PPIx/XPath.pm',
-  AUTHOR       => 'Dan Brook',
+requires 'Tree::XPathEngine' => 0,
+         'PPI'               => '1.2',
+         'Scalar::Util'      => 0,
+         'Carp'              => 0,
+         'perl'              => '5.6.0',
+;
 
-  PREREQ_PM    => {
-    'Class::XPath' => 0,
-    'PPI'          => 0,
-  },
-);
+test_requires 'Test::Most'   => 0,
+;
+
+WriteAll;
